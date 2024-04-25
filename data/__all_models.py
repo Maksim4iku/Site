@@ -1,3 +1,4 @@
 from . import users
-from . import news
+from . import posts
 from . import category
+from . import messages

@@ -6,8 +6,8 @@ from sqlalchemy_serializer import SerializerMixin
 association_table = sqlalchemy.Table(
     'association',
     SqlAlchemyBase.metadata,
-    sqlalchemy.Column('news', sqlalchemy.Integer,
-                      sqlalchemy.ForeignKey('news.id')),
+    sqlalchemy.Column('posts', sqlalchemy.Integer,
+                      sqlalchemy.ForeignKey('posts.id')),
     sqlalchemy.Column('category', sqlalchemy.Integer,
                       sqlalchemy.ForeignKey('category.id'))
 )

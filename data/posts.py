@@ -6,8 +6,8 @@ from .db_session import SqlAlchemyBase
 from sqlalchemy_serializer import SerializerMixin
 
 
-class News(SqlAlchemyBase, SerializerMixin):
-    __tablename__ = 'news'
+class Posts(SqlAlchemyBase, SerializerMixin):
+    __tablename__ = 'posts'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
@@ -22,8 +22,8 @@ class News(SqlAlchemyBase, SerializerMixin):
     user = orm.relationship('User')
     categories = orm.relationship("Category",
                                   secondary="association",
-                                  backref="news")
+                                  backref="posts")
     is_published = sqlalchemy.Column(sqlalchemy.Boolean, default=True)
 
     def __repr__(self):
-        return f"<New> {self.title} {self.content} {self.created_date}"
+        return f"<Post> {self.title} {self.content} {self.created_date}"
